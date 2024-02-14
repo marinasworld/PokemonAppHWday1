@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Pokemon
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <div class="mb-3">
+            <label for="pokemonLabel" class="form-label">Pokemon Name</label>
+            <input type="text" class="form-control" id="pokemonNameInput" name="pokemonNameInput">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if drivers %}
+        <label style="display:block;">Pokemon Name: {{ drivers['name'] }} </label>
+        <label style="display:block;">Pokemon Ability: {{ drivers['ability'] }} </label>
+        <label style="display:block;">Pokemon Base Hp: {{ drivers['hp'] }} </label>
+        <label style="display:block;">Pokemon Base Attack: {{ drivers['attack'] }} </label>
+        <label style="display:block;">Pokemon Base Defense: {{ drivers['defense'] }} </label>
+        <label style="display:block;">Pokemon Image: {{ drivers['pokemonImage'] }} </label>
+    {% endif %}
+
+{% endblock %}
+
